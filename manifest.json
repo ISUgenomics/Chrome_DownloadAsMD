@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Download As Markdown",
+  "version": "1.0.0",
+  "description": "Download the current page or same-origin site pages as Markdown.",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Download As Markdown",
+    "default_popup": "popup.html"
+  }
+}
