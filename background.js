@@ -147,15 +147,21 @@ async function extractFromTab(tabId) {
   return result?.result;
 }
 
-function waitForTabComplete(tabId) {
-  return new Promise((resolve) => {
+function waitForTabComplete(tabId, timeoutMs = 30000) {
+  return new Promise((resolve, reject) => {
+    let timeoutId;
     const listener = (updatedTabId, info) => {
       if (updatedTabId === tabId && info.status === "complete") {
+        clearTimeout(timeoutId);
         chrome.tabs.onUpdated.removeListener(listener);
         resolve();
       }
     };
     chrome.tabs.onUpdated.addListener(listener);
+    timeoutId = setTimeout(() => {
+      chrome.tabs.onUpdated.removeListener(listener);
+      reject(new Error("Timed out waiting for tab to load."));
+    }, timeoutMs);
   });
 }
 

@@ -7,8 +7,7 @@ Chrome extension to download a single page as Markdown or download a site (same-
 1. Open `chrome://extensions`.
 2. Enable **Developer mode**.
 3. Click **Load unpacked**.
-4. Select this repository folder:  
-   `/home/runner/work/Chrome_DownloadAsMD/Chrome_DownloadAsMD/ISUgenomics/Chrome_DownloadAsMD`
+4. Select your local clone of this repository folder.
 
 ## Use
 
