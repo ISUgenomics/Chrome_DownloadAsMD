@@ -2,6 +2,9 @@
 
 Chrome extension to download a single page as Markdown or download a site (same-origin links from the current page) as a folder of Markdown files.
 
+## About
+I was looking for a way to easily grab websites as text for LLM ingestion when I didn't want to programmatically scrape it or was blocked by a bot. 
+
 ## Install
 
 1. Open `chrome://extensions`.
